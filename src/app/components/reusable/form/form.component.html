@@ -1,11 +1,17 @@
 <form>
-    <section *ngFor="let title of userTitles">
-        <app-input [title]="title" (inputEvent)="onInputChange($event)"></app-input>
+    <section>
+        <app-input [title]="userTitles[0]" (inputEvent)="onInputChange($event)" [value]="user.name" [editable]="editable"></app-input>
+        <app-input [title]="userTitles[1]" (inputEvent)="onInputChange($event)" [value]="user.email" [editable]="editable"></app-input>
+        <app-input [title]="userTitles[2]" (inputEvent)="onInputChange($event)" [value]="user.phone" [editable]="editable"></app-input>
     </section>
     <section>
         <p>ENDEREÇO</p>
-        <section *ngFor="let title of addressTitles">
-            <app-input [title]="title" (inputEvent)="onInputChange($event)"></app-input>
+        <section>
+            <app-input [title]="addressTitles[0]" (inputEvent)="onInputChange($event)" [value]="user.address.street" [editable]="editable"></app-input>
+            <app-input [title]="addressTitles[1]" (inputEvent)="onInputChange($event)" [value]="user.address.neighborhood || ''" [editable]="editable"></app-input>
+            <app-input [title]="addressTitles[2]" (inputEvent)="onInputChange($event)" [value]="user.address.city" [editable]="editable"></app-input>
+            <app-input [title]="addressTitles[3]" (inputEvent)="onInputChange($event)" [value]="user.address.cep || ''" [editable]="editable"></app-input>
+            <app-input [title]="addressTitles[4]" (inputEvent)="onInputChange($event)" [value]="user.address.state" [editable]="editable"></app-input>
         </section>
     </section>
 </form>

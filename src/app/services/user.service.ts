@@ -21,7 +21,7 @@ export class UserService {
   }
 
   index(id:number):IUser{
-    return database.filter((user) => user.id = id)[0] as any;
+    return database.filter((user) => user.id === id)[0];
   }
 
   update(id:number, user:Partial<IUserRaw>):IUser{
@@ -46,7 +46,7 @@ export class UserService {
   }
 
   delete(id:number):void{
-    const oldUser = database.filter((data:IUser) => data.id === id)[0] as any;
+    const oldUser = database.filter((data:IUser) => data.id === id)[0];
     const index = database.indexOf(oldUser);
     database.splice(index, 1);
   }

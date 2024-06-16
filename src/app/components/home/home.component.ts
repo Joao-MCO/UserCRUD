@@ -6,6 +6,8 @@ import { ButtonComponent } from '../reusable/button/button.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { ViewEmployeeComponent } from '../view-employee/view-employee.component';
 import { DeleteEmployeeComponent } from '../delete-employee/delete-employee.component';
+import { defaultUser } from '../../utils/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -15,11 +17,14 @@ import { DeleteEmployeeComponent } from '../delete-employee/delete-employee.comp
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  constructor(private userService: UserService) {}
+
   createWindow = false;
   updateWindow = false;
   viewWindow = false;
   deleteWindow = false;
   userId = -1;
+  user = defaultUser;
   createUser = "Criar Usuário"
 
    onCreateEvent(text:any){
@@ -43,6 +48,7 @@ export class HomeComponent {
     this.createWindow = false;
     this.deleteWindow = false;
     this.userId = id;
+    this.user = this.userService.index(this.userId);
    }
 
    onDeleteEvent(id:any){

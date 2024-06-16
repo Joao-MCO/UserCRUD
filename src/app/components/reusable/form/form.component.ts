@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { InputComponent } from '../input/input.component';
 import { NgFor } from '@angular/common';
@@ -16,8 +16,10 @@ import { FormsModule } from '@angular/forms';
 export class FormComponent {
   userTitles: string[] = ['NOME', 'EMAIL', 'TELEFONE'];
   addressTitles: string[] = ['RUA', 'BAIRRO', 'CIDADE', 'CEP', 'ESTADO']
-  user = defaultUser;
   @Output() userInfo = new EventEmitter<any>();
+  @Input() id = -1;
+  @Input() user = defaultUser;
+  @Input() editable = true;
   onInputChange(info:any){
     if(info.key === this.userTitles[0]) this.user.name = info.value;
     if(info.key === this.userTitles[1]) this.user.email = info.value;

@@ -1,2 +1,3 @@
-<h2>View</h2>
-<app-form></app-form>
+<h2>{{title}}</h2>
+<app-button [text]="buttonCancel" (event)="onButtonClick($event)"></app-button>
+<app-form [id]="id" [user]="user" [editable]="editable"></app-form>
