@@ -3,6 +3,7 @@ import { ButtonComponent } from '../button/button.component';
 import { InputComponent } from '../input/input.component';
 import { NgFor } from '@angular/common';
 import { IUserRaw } from '../../../utils/user';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-form',
@@ -12,6 +13,9 @@ import { IUserRaw } from '../../../utils/user';
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
+
+  constructor(private userService: UserService) {}
+
   buttonSave: string = "SALVAR";
   buttonCancel: string = "CANCELAR";
   userTitles: string[] = ['NOME', 'EMAIL', 'TELEFONE'];
@@ -30,9 +34,8 @@ export class FormComponent {
   };
 
   @Output() onCancel = new EventEmitter<any>();
-  @Output() onCreate = new EventEmitter<any>();
   onButtonClick(text: string){
-    if(text === this.buttonCancel) this.onCancel.emit();
-    else this.onCreate.emit(this.user);
+    if(text === this.buttonSave) this.userService.create(this.user);
+    this.onCancel.emit();
   };
 }

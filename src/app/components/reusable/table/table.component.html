@@ -1,22 +1,26 @@
 <table>
-    <tr>
-        <th>CADASTRO</th>
-        <th>DATA</th>
-        <th>NOME</th>
-        <th>TELEFONE</th>
-        <th>EMAIL</th>
-        <th>AÇÕES</th>
-    </tr>
-    <tr *ngFor="let data of database">
-        <th>{{data.id}}</th>
-        <th>{{data.date}}</th>
-        <th>{{data.name}}</th>
-        <th>{{data.phone}}</th>
-        <th>{{data.email}}</th>
-        <th>
-            <app-button [text] = "viewButton"></app-button>
-            <app-button [text] = "updateButton"></app-button>
-            <app-button [text] = "deleteButton"></app-button>
-        </th>
-    </tr>
+    <thead>
+        <tr>
+            <th>CADASTRO</th>
+            <th>DATA</th>
+            <th>NOME</th>
+            <th>TELEFONE</th>
+            <th>EMAIL</th>
+            <th>AÇÕES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of database">
+            <td>{{data.id}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.email}}</td>
+            <td>
+                <app-button [text] = "viewButton"></app-button>
+                <app-button [text] = "updateButton"></app-button>
+                <app-button [text] = "deleteButton"></app-button>
+            </td>
+        </tr>
+    </tbody>
 </table>
