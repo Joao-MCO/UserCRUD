@@ -9,6 +9,11 @@ import { FormsModule } from '@angular/forms'
   styleUrl: './input.component.scss'
 })
 export class InputComponent {
-  username = '';
+  text = '';
   @Input() title = '';
+  @Output() inputEvent = new EventEmitter<any>();
+
+  onEvent(){
+    this.inputEvent.emit({key: this.title, value:this.text});
+  }
 }
