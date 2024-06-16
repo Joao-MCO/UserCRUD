@@ -1,0 +1,5 @@
+<h1>CRUD de Usuários</h1>
+<br>
+<button type="button" (click)="onCreate()">Criar Usuário</button>
+<app-add-employee *ngIf="createWindow" (onCancel)="onCancelEvent()"></app-add-employee>
+<app-table></app-table>

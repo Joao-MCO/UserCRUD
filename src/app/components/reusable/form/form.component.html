@@ -1,0 +1,13 @@
+<form>
+    <section *ngFor="let title of userTitles">
+        <app-input [title]="title"></app-input>
+    </section>
+    <section>
+        <p>ENDEREÇO</p>
+        <section *ngFor="let title of addressTitles">
+            <app-input [title]="title"></app-input>
+        </section>
+    </section>
+    <app-button [text]="buttonCancel" (event)="onButtonClick($event)"></app-button> 
+    <app-button [text]="buttonSave"></app-button> 
+</form>

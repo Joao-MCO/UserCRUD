@@ -96,12 +96,16 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "styles.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "61ae0da8-a4af-48a5-b7d7-8e570cac7f8c"
   }
 }
