@@ -17,9 +17,9 @@
             <td>{{data.phone}}</td>
             <td>{{data.email}}</td>
             <td>
-                <app-button [text] = "viewButton"></app-button>
-                <app-button [text] = "updateButton"></app-button>
-                <app-button [text] = "deleteButton"></app-button>
+                <app-button [text] = "viewButton" (event)="eventManager($event, data.id)"></app-button>
+                <app-button [text] = "updateButton" (event)="eventManager($event, data.id)"></app-button>
+                <app-button [text] = "deleteButton" (event)="eventManager($event, data.id)"></app-button>
             </td>
         </tr>
     </tbody>

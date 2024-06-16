@@ -11,12 +11,8 @@ import { IUser } from '../../utils/user';
 })
 export class AddEmployeeComponent {
   @Output() onCancel = new EventEmitter<any>();
-  @Output() onCreate = new EventEmitter<any>();
+  title = "CREATE";
   onCancelClick(){
     this.onCancel.emit();
-  }
-
-  onCreateClick(user:IUser){
-    this.onCreate.emit(user);
   }
 }

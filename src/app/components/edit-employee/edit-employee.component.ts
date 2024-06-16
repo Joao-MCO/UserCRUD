@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormComponent } from '../reusable/form/form.component';
 
 @Component({
@@ -9,5 +9,10 @@ import { FormComponent } from '../reusable/form/form.component';
   styleUrl: './edit-employee.component.scss'
 })
 export class EditEmployeeComponent {
-
+  @Output() onCancel = new EventEmitter<any>();
+  @Input() id = -1;
+  title = "UPDATE";
+  onCancelClick(){
+    this.onCancel.emit();
+  }
 }
