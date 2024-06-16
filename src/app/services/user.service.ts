@@ -46,8 +46,8 @@ export class UserService {
   }
 
   delete(id:number):void{
-    const oldUser = database.filter((data:IUser) => data.id === id) as any;
+    const oldUser = database.filter((data:IUser) => data.id === id)[0] as any;
     const index = database.indexOf(oldUser);
-    database.slice(index, index+1);
+    database.splice(index, 1);
   }
 }

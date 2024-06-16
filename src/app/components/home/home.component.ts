@@ -46,7 +46,7 @@ export class HomeComponent {
    }
 
    onDeleteEvent(id:any){
-    this.viewWindow = true;
+    this.viewWindow = false;
     this.updateWindow = false;
     this.createWindow = false;
     this.deleteWindow = true;

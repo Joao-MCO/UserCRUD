@@ -1,1 +1,5 @@
-<p>delete-employee works!</p>
+<h2>{{title}}</h2>
+<h3>Deseja realmente excluir?</h3>
+<h5>Essa ação não pode ser desfeita</h5>
+<app-button [text]="buttonCancel" (event)="onButtonClick($event)"></app-button>
+<app-button [text]="buttonDelete" (event)="onButtonClick($event)"></app-button>
