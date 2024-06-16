@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { InputComponent } from '../input/input.component';
-import { IUser } from '../../../interfaces/user';
 import { NgFor } from '@angular/common';
+import { IUserRaw } from '../../../utils/user';
 
 @Component({
   selector: 'app-form',
@@ -16,7 +16,7 @@ export class FormComponent {
   buttonCancel: string = "CANCELAR";
   userTitles: string[] = ['NOME', 'EMAIL', 'TELEFONE'];
   addressTitles: string[] = ['RUA', 'BAIRRO', 'CIDADE', 'CEP', 'ESTADO']
-  user: IUser = {
+  user: IUserRaw = {
     name: '',
     email: '',
     phone: '',
@@ -30,7 +30,9 @@ export class FormComponent {
   };
 
   @Output() onCancel = new EventEmitter<any>();
-  onButtonClick = (text: string) => {
+  @Output() onCreate = new EventEmitter<any>();
+  onButtonClick(text: string){
     if(text === this.buttonCancel) this.onCancel.emit();
+    else this.onCreate.emit(this.user);
   };
 }

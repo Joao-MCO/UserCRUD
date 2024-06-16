@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormComponent } from '../reusable/form/form.component';
+import { IUser } from '../../utils/user';
 
 @Component({
   selector: 'app-add-employee',
@@ -10,7 +11,12 @@ import { FormComponent } from '../reusable/form/form.component';
 })
 export class AddEmployeeComponent {
   @Output() onCancel = new EventEmitter<any>();
+  @Output() onCreate = new EventEmitter<any>();
   onCancelClick(){
     this.onCancel.emit();
+  }
+
+  onCreateClick(user:IUser){
+    this.onCreate.emit(user);
   }
 }
