@@ -1,2 +1,4 @@
 <h2>{{title}}</h2>
-<app-form (onCancel)="onCancelClick()" [title]="title"></app-form>
+<app-form (userInfo)="onSave($event)"></app-form>
+<app-button [text]="buttonCancel" (event)="onButtonClick($event)"></app-button> 
+<app-button [text]="buttonSave" (event)="onButtonClick($event)"></app-button> 

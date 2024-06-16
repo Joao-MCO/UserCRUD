@@ -19,3 +19,16 @@ export interface IAddress {
     cep ?: string,
     state : string
 }
+
+export const defaultUser: IUserRaw = {
+    name: '',
+    email: '',
+    phone: '',
+    address: {
+      street: '',
+      city: '',
+      neighborhood: '',
+      cep: '',
+      state: ''
+    }
+  };

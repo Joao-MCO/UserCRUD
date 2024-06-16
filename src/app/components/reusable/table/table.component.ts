@@ -20,6 +20,7 @@ export class TableComponent {
   @Output() deleteComponent = new EventEmitter<any>();
   database = this.userService.list();
   eventManager(text:string, id:number){
+    console.log(id);
     if(text === this.viewButton) this.viewComponent.emit(id);
     else if(text === this.updateButton) this.updateComponent.emit(id);
     else if(text === this.deleteButton) this.deleteComponent.emit(id);

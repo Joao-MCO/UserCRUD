@@ -4,5 +4,5 @@
 <app-add-employee *ngIf="createWindow" (onCancel)="onCancelEvent()"></app-add-employee>
 <app-edit-employee *ngIf="updateWindow" (onCancel)="onCancelEvent()" [id]="userId"></app-edit-employee>
 <app-view-employee *ngIf="viewWindow" (onCancel)="onCancelEvent()" [id]="userId"></app-view-employee>
-<!-- <app-delete-employee *ngIf="deleteWindow" (onCancel)="onCancelEvent($event)"></app-delete-employee> -->
+<app-delete-employee *ngIf="deleteWindow" (onCancel)="onCancelEvent()" [id]="userId"></app-delete-employee>
 <app-table *ngIf="!createWindow && !updateWindow && !viewWindow && !deleteWindow" (viewComponent)="onViewEvent($event)" (updateComponent)="onUpdateEvent($event)"></app-table>

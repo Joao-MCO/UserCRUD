@@ -5,11 +5,12 @@ import { NgIf } from '@angular/common';
 import { ButtonComponent } from '../reusable/button/button.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { ViewEmployeeComponent } from '../view-employee/view-employee.component';
+import { DeleteEmployeeComponent } from '../delete-employee/delete-employee.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TableComponent, AddEmployeeComponent, NgIf, ButtonComponent, EditEmployeeComponent, ViewEmployeeComponent],
+  imports: [TableComponent, AddEmployeeComponent, NgIf, ButtonComponent, EditEmployeeComponent, ViewEmployeeComponent, DeleteEmployeeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -41,6 +42,14 @@ export class HomeComponent {
     this.updateWindow = false;
     this.createWindow = false;
     this.deleteWindow = false;
+    this.userId = id;
+   }
+
+   onDeleteEvent(id:any){
+    this.viewWindow = true;
+    this.updateWindow = false;
+    this.createWindow = false;
+    this.deleteWindow = true;
     this.userId = id;
    }
 

@@ -25,7 +25,7 @@ export class UserService {
   }
 
   update(id:number, user:Partial<IUserRaw>):IUser{
-    const oldUser = database.filter((data)=>data.id = id)[0];
+    const oldUser = database.filter((data)=>data.id === id)[0];
     const index = database.indexOf(oldUser);
     const newUser:IUser = {
       id: id,
