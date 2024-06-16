@@ -1,6 +1,6 @@
 <h1>Usuários</h1>
 <br>
-<app-button [text]="createUser" (event)="onCreateEvent($event)"></app-button>
+<app-button [text]="createUser" (event)="onCreateEvent($event)" *ngIf="!createWindow && !updateWindow && !viewWindow && !deleteWindow"></app-button>
 <app-add-employee *ngIf="createWindow" (onCancel)="onCancelEvent()"></app-add-employee>
 <app-edit-employee *ngIf="updateWindow" (onCancel)="onCancelEvent()" [id]="userId"></app-edit-employee>
 <app-view-employee *ngIf="viewWindow" (onCancel)="onCancelEvent()" [id]="userId"></app-view-employee>
